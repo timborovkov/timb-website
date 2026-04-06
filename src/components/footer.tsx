@@ -1,0 +1,31 @@
+import Image from "next/image";
+import { SITE } from "@/lib/constants";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border px-6 py-8">
+      <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 text-sm text-muted sm:flex-row">
+        <div className="flex items-center gap-3">
+          <Image
+            src="/fella.png"
+            alt="NAFO fella"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
+          <p>
+            &copy; {new Date().getFullYear()} {SITE.name}
+          </p>
+        </div>
+        <p className="flex gap-2">
+          {SITE.domains.map((domain, i) => (
+            <span key={domain}>
+              {domain}
+              {i < SITE.domains.length - 1 && <span className="ml-2">&middot;</span>}
+            </span>
+          ))}
+        </p>
+      </div>
+    </footer>
+  );
+}
