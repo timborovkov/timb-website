@@ -1,4 +1,4 @@
-# timb.dev
+# timb.dev 
 
 Personal website for Tim Borovkov — entrepreneur & software engineer.
 
