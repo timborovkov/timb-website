@@ -1,6 +1,6 @@
 "use client";
 
-import { BIO } from "@/lib/constants";
+import { BIO, INTERESTS } from "@/lib/constants";
 import { SectionWrapper } from "./section-wrapper";
 
 export function About() {
@@ -13,6 +13,21 @@ export function About() {
             {paragraph}
           </p>
         ))}
+      </div>
+      <div className="mt-10">
+        <h3 className="font-display text-sm font-semibold uppercase tracking-widest text-muted">
+          Interests
+        </h3>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {INTERESTS.map((interest) => (
+            <li
+              key={interest}
+              className="rounded-full border border-border bg-surface/60 px-3 py-1 text-sm text-muted"
+            >
+              {interest}
+            </li>
+          ))}
+        </ul>
       </div>
     </SectionWrapper>
   );

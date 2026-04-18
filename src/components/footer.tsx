@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SITE } from "@/lib/constants";
+import { SITE, EMAIL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -8,23 +8,31 @@ export function Footer() {
         <div className="flex items-center gap-3">
           <Image
             src="/fella.png"
-            alt="NAFO fella"
+            alt="Tim Borovkov avatar"
             width={32}
             height={32}
             className="rounded-full"
           />
           <p>
-            &copy; {new Date().getFullYear()} {SITE.name}
+            &copy; {new Date().getFullYear()} {SITE.name} 🇪🇺
           </p>
         </div>
-        <p className="flex gap-2">
-          {SITE.domains.map((domain, i) => (
-            <span key={domain}>
-              {domain}
-              {i < SITE.domains.length - 1 && <span className="ml-2">&middot;</span>}
-            </span>
-          ))}
-        </p>
+        <div className="flex flex-col items-center gap-2 sm:items-end">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="transition-colors hover:text-accent"
+          >
+            {EMAIL}
+          </a>
+          <p className="flex gap-2">
+            {SITE.domains.map((domain, i) => (
+              <span key={domain}>
+                {domain}
+                {i < SITE.domains.length - 1 && <span className="ml-2">&middot;</span>}
+              </span>
+            ))}
+          </p>
+        </div>
       </div>
     </footer>
   );

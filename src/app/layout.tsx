@@ -1,27 +1,72 @@
 import type { Metadata } from "next";
 import { inter, spaceGrotesk } from "@/lib/fonts";
+import { SITE, EMAIL } from "@/lib/constants";
 import "./globals.css";
 
+const SITE_URL = "https://timb.dev";
+
 export const metadata: Metadata = {
-  title: "Tim Borovkov — Founder & Software Engineer",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Tim Borovkov — Founder & Software Engineer",
+    template: "%s | Tim Borovkov",
+  },
   description:
-    "Tech, startups, AI, politics, Europe and more. Building the future with TypeScript, Next.js, and Go.",
-  metadataBase: new URL("https://timb.dev"),
+    "Tim Borovkov — founder & software engineer based in Helsinki. Co-founder of Tecci, building Vernix and IRMIN. Writing about tech, startups, AI, Europe and politics.",
+  applicationName: "Tim Borovkov",
+  authors: [{ name: "Tim Borovkov", url: SITE_URL }],
+  creator: "Tim Borovkov",
+  publisher: "Tim Borovkov",
+  keywords: [
+    "Tim Borovkov",
+    "timb.dev",
+    "Borovkov",
+    "founder",
+    "software engineer",
+    "European federalist",
+    "classical liberal",
+    "Tecci",
+    "Vernix",
+    "IRMIN",
+    "Helsinki",
+    "Tallinn",
+    "Estonia",
+    "Finland",
+    "Europe",
+    "TypeScript",
+    "Next.js",
+    "Go",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Tim Borovkov",
-    description:
-      "Founder & Software Engineer — Tech, startups, AI, politics, Europe and more.",
-    url: "https://timb.dev",
+    type: "profile",
+    url: SITE_URL,
     siteName: "Tim Borovkov",
+    title: "Tim Borovkov — Founder & Software Engineer",
+    description:
+      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
     locale: "en_US",
-    type: "website",
+    firstName: "Tim",
+    lastName: "Borovkov",
+    username: "timborovkov",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tim Borovkov",
-    description:
-      "Founder & Software Engineer — Tech, startups, AI, politics, Europe and more.",
+    site: "@timborovkov",
     creator: "@timborovkov",
+    title: "Tim Borovkov — Founder & Software Engineer",
+    description:
+      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
   },
   icons: {
     icon: [
@@ -31,8 +76,43 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   alternates: {
-    canonical: "https://timb.dev",
+    canonical: SITE_URL,
   },
+  category: "technology",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.name,
+  url: SITE_URL,
+  image: `${SITE_URL}/fella.png`,
+  email: `mailto:${EMAIL}`,
+  jobTitle: "Founder & Software Engineer",
+  worksFor: [
+    { "@type": "Organization", name: "Tecci", url: "https://www.tecci.fi/" },
+    { "@type": "Organization", name: "IRMIN", url: "https://irmin.co" },
+  ],
+  sameAs: [
+    "https://x.com/timborovkov",
+    "https://www.linkedin.com/in/timborovkov",
+    "https://github.com/timborovkov",
+    "https://www.instagram.com/theborovkov",
+    "https://borovkov.me",
+  ],
+  birthPlace: "Tallinn, Estonia",
+  homeLocation: { "@type": "Place", name: "Helsinki, Finland" },
+  knowsAbout: [
+    "TypeScript",
+    "Next.js",
+    "Go",
+    "AI",
+    "Startups",
+    "Europe",
+    "European federalism",
+    "Classical liberalism",
+    "Politics",
+  ],
 };
 
 export default function RootLayout({
@@ -42,7 +122,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

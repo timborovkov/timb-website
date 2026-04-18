@@ -31,6 +31,12 @@ const icons: Record<string, React.ReactNode> = {
       <line x1="3" y1="10" x2="21" y2="10" />
     </svg>
   ),
+  mail: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-5">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </svg>
+  ),
 };
 
 interface SocialIconProps {
@@ -40,11 +46,12 @@ interface SocialIconProps {
 }
 
 export function SocialIcon({ icon, href, label }: SocialIconProps) {
+  const isMailto = href.startsWith("mailto:");
   return (
     <motion.a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isMailto ? undefined : "_blank"}
+      rel={isMailto ? undefined : "noopener noreferrer"}
       aria-label={label}
       className="flex items-center justify-center rounded-full border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent"
       whileHover={{ scale: 1.1 }}

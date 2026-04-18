@@ -24,9 +24,10 @@ export function Hero() {
                 delay: i * 0.15,
                 ease: [0.25, 0.4, 0.25, 1],
               }}
-              className="mr-4 inline-block last:mr-0"
+              className="inline-block"
             >
               {word}
+              {i < words.length - 1 ? "\u00A0" : ""}
             </motion.span>
           ))}
         </h1>

@@ -12,8 +12,8 @@ export function Contact() {
         Let&apos;s connect
       </h2>
       <p className="mt-4 max-w-lg text-lg text-muted">
-        I&apos;m always open to connecting with like-minded individuals, collaborators, and anyone
-        interested in technology, entrepreneurship, or politics.
+        Always happy to hear from founders, collaborators, and anyone curious about tech, startups,
+        or European politics. Email is fastest.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-4">

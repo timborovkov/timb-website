@@ -26,7 +26,7 @@ export function Nav() {
           href="#hero"
           className="font-display text-lg font-bold transition-colors hover:text-accent"
         >
-          Tim B.
+          Tim B. 🇪🇺
         </a>
 
         {/* Desktop */}
