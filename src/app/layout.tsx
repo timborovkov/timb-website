@@ -3,7 +3,7 @@ import { inter, spaceGrotesk } from "@/lib/fonts";
 import { SITE, EMAIL } from "@/lib/constants";
 import "./globals.css";
 
-const SITE_URL = "https://timb.dev";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://timb.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
