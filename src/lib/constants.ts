@@ -1,6 +1,7 @@
 export const SITE = {
   name: "Tim Borovkov",
-  tagline: "Software engineer, born founder, classical liberal & European federalist 🇪🇺. Coding since age 12, on a journey to change the world.",
+  tagline:
+    "Software engineer, born founder, classical liberal & European federalist 🇪🇺. Coding since age 12, on a journey to change the world.",
   domains: ["timb.dev", "borovkov.me"],
 } as const;
 

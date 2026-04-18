@@ -8,10 +8,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-const STATUS_META: Record<
-  ProjectStatus,
-  { label: string; classes: string }
-> = {
+const STATUS_META: Record<ProjectStatus, { label: string; classes: string }> = {
   live: { label: "Live", classes: "bg-emerald-500/15 text-emerald-400" },
   "coming-soon": { label: "Coming Soon", classes: "bg-amber-500/15 text-amber-400" },
   ongoing: { label: "Ongoing", classes: "bg-sky-500/15 text-sky-400" },
@@ -54,9 +51,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       <div className="flex items-center justify-between">
-        <h3 className="font-display text-2xl font-bold tracking-wide">
-          {displayName}
-        </h3>
+        <h3 className="font-display text-2xl font-bold tracking-wide">{displayName}</h3>
         <span className={`rounded-full px-3 py-1 text-xs font-medium ${status.classes}`}>
           {status.label}
         </span>
