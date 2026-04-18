@@ -18,10 +18,7 @@ export function Footer() {
           </p>
         </div>
         <div className="flex flex-col items-center gap-2 sm:items-end">
-          <a
-            href={`mailto:${EMAIL}`}
-            className="transition-colors hover:text-accent"
-          >
+          <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent">
             {EMAIL}
           </a>
           <p className="flex gap-2">

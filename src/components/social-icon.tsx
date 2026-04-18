@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const icons: Record<string, React.ReactNode> = {
   x: (
@@ -32,7 +33,15 @@ const icons: Record<string, React.ReactNode> = {
     </svg>
   ),
   mail: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-5">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-5"
+    >
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="m3 7 9 6 9-6" />
     </svg>
@@ -53,6 +62,13 @@ export function SocialIcon({ icon, href, label }: SocialIconProps) {
       target={isMailto ? undefined : "_blank"}
       rel={isMailto ? undefined : "noopener noreferrer"}
       aria-label={label}
+      onClick={() =>
+        sendGAEvent("event", "outbound_click", {
+          link_label: label,
+          link_url: href,
+          link_type: isMailto ? "email" : "social",
+        })
+      }
       className="flex items-center justify-center rounded-full border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
