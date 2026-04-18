@@ -11,7 +11,7 @@ export function Footer() {
             alt="Tim Borovkov avatar"
             width={32}
             height={32}
-            className="rounded-full"
+            className="size-8 rounded-full object-cover"
           />
           <p>
             &copy; {new Date().getFullYear()} {SITE.name} 🇪🇺

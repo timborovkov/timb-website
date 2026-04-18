@@ -108,6 +108,8 @@ export const SKILLS: Skill[] = [
       "event-driven",
       "scaling",
       "performance",
+      "concurrency",
+      "reliability",
     ],
   },
   {
@@ -183,7 +185,16 @@ export const SKILLS: Skill[] = [
     level: 2,
     description:
       "Self-hosted and cloud. Containers, orchestration, CI/CD, monitoring, backups, and the full production-readiness stack - enough to ship and keep things running.",
-    tags: ["Docker", "Kubernetes", "AWS", "VPS management", "CI/CD", "caching", "serverless"],
+    tags: [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "VPS management",
+      "CI/CD",
+      "caching",
+      "load balancing",
+      "serverless",
+    ],
   },
 ];
 
