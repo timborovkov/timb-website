@@ -36,7 +36,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-lg text-lg text-muted sm:text-xl"
+          className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
         >
           {SITE.tagline}
         </motion.p>
