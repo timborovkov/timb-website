@@ -56,13 +56,14 @@ interface SocialIconProps {
 
 export function SocialIcon({ icon, href, label }: SocialIconProps) {
   const isMailto = href.startsWith("mailto:");
+  const linkType = icon === "mail" ? "email" : icon === "calendar" ? "cal" : "social";
   return (
     <motion.a
       href={href}
       target={isMailto ? undefined : "_blank"}
       rel={isMailto ? undefined : "noopener noreferrer"}
       aria-label={label}
-      onClick={() => trackOutboundClick(label, href, isMailto ? "email" : "social")}
+      onClick={() => trackOutboundClick(label, href, linkType)}
       className="flex items-center justify-center rounded-full border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
