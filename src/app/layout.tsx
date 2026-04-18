@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Tim Borovkov",
   },
   description:
-    "Tim Borovkov - founder & software engineer based in Helsinki. Co-founder of Tecci, building Vernix and IRMIN.",
+    "Tim Borovkov - software engineer and European federalist 🇪🇺. 10+ years shipping products and companies; running Tecci since 2019, founded UpCharge, now building in AI and data.",
   applicationName: "Tim Borovkov",
   authors: [{ name: "Tim Borovkov", url: SITE_URL }],
   creator: "Tim Borovkov",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Tim Borovkov",
     title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, Raccoon Nest.",
+      "Software engineer by craft, European federalist by conviction. Shipping code since I was 12 - products and companies ever since. Running Tecci, founded UpCharge, now building in AI and data.",
     locale: "en_US",
     firstName: "Tim",
     lastName: "Borovkov",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     creator: "@timborovkov",
     title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, Raccoon Nest.",
+      "Software engineer by craft, European federalist by conviction. Shipping code since I was 12 - products and companies ever since. Running Tecci, founded UpCharge, now building in AI and data.",
   },
   icons: {
     icon: [
