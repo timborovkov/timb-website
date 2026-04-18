@@ -191,6 +191,7 @@ export const SKILLS: Skill[] = [
       "AWS",
       "VPS management",
       "CI/CD",
+      "observability",
       "caching",
       "load balancing",
       "serverless",
