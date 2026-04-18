@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { trackOutboundClick } from "@/lib/analytics";
 import { SOCIAL_LINKS } from "@/lib/constants";
 import { SectionWrapper } from "./section-wrapper";
 import { SocialIcon } from "./social-icon";
@@ -26,6 +27,7 @@ export function Contact() {
         href="https://cal.com/timbo"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackOutboundClick("Schedule a call (CTA)", "https://cal.com/timbo", "cal")}
         className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-neutral-950 transition-colors hover:bg-accent/80"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
