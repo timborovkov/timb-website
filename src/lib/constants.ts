@@ -131,13 +131,7 @@ export const SKILLS: Skill[] = [
     level: 4,
     description:
       "B2B portals, commerce, and integrations into the systems enterprises actually run on. Tecci work for clients across manufacturing, agri-coops, real estate, and services.",
-    tags: [
-      "SSO",
-      "enterprise integrations",
-      "checkout & payments",
-      "product search",
-      "SEO",
-    ],
+    tags: ["SSO", "enterprise integrations", "checkout & payments", "product search", "SEO"],
   },
   {
     name: "AI Systems",
