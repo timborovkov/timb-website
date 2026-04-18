@@ -30,9 +30,9 @@ export function Skills() {
       <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">Skills</h2>
       <p className="mt-4 max-w-2xl text-muted">
         Started coding in Java at 12, went through Swift, and today build full-stack in TypeScript
-        and Go — from infra to UI. Ten-plus years of shipping, mostly as a founder rather than
-        inside a big engineering org — so what&apos;s here is what I&apos;ve actually put the reps
-        into, not a company-scaffolded title list. Still learning; always will be.
+        and Go - from infra to UI. 10+ years of shipping, mostly as a founder rather than inside a
+        big engineering org. What&apos;s here is what I&apos;ve actually put the reps into - not a
+        company-scaffolded title list. Still learning; always will be.
       </p>
 
       <div className="mt-10 rounded-2xl border border-accent/40 bg-surface/60 p-6 backdrop-blur-sm sm:p-8">

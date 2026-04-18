@@ -8,11 +8,11 @@ const SITE_URL = "https://timb.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tim Borovkov — Founder & Software Engineer",
+    default: "Tim Borovkov - Founder & Software Engineer",
     template: "%s | Tim Borovkov",
   },
   description:
-    "Tim Borovkov — founder & software engineer based in Helsinki. Co-founder of Tecci, building Vernix and IRMIN. Writing about tech, startups, AI, Europe and politics.",
+    "Tim Borovkov - founder & software engineer based in Helsinki. Co-founder of Tecci, building Vernix and IRMIN.",
   applicationName: "Tim Borovkov",
   authors: [{ name: "Tim Borovkov", url: SITE_URL }],
   creator: "Tim Borovkov",
@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     type: "profile",
     url: SITE_URL,
     siteName: "Tim Borovkov",
-    title: "Tim Borovkov — Founder & Software Engineer",
+    title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
+      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, Raccoon Nest.",
     locale: "en_US",
     firstName: "Tim",
     lastName: "Borovkov",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@timborovkov",
     creator: "@timborovkov",
-    title: "Tim Borovkov — Founder & Software Engineer",
+    title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
+      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, Raccoon Nest.",
   },
   icons: {
     icon: [
