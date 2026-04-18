@@ -69,22 +69,20 @@ Wired up via [`@next/third-parties`](https://nextjs.org/docs/app/guides/third-pa
 
 If `NEXT_PUBLIC_GA_ID` is unset, no analytics scripts are loaded at all.
 
-### No cookie banner — how
+### Consent mode
 
-The site uses [Google Consent Mode v2](https://developers.google.com/tag-platform/security/guides/consent) with all storage denied by default:
+The site uses [Google Consent Mode v2](https://developers.google.com/tag-platform/security/guides/consent) with analytics granted and ad storage denied by default:
 
 ```js
 gtag("consent", "default", {
   ad_storage: "denied",
   ad_user_data: "denied",
   ad_personalization: "denied",
-  analytics_storage: "denied",
+  analytics_storage: "granted",
 });
 ```
 
-With `analytics_storage` denied, GA4 sends **cookieless pings** — no `_ga*` cookies, no persistent client-side identifiers, IPs truncated. Under GDPR/ePrivacy this is generally treated as not requiring prior consent, so no banner is needed.
-
-The trade-off: data is aggregated rather than per-user. You lose session stitching and user journeys but keep visit counts, referrers, geo, device, and custom events.
+This sets `_ga*` cookies and populates GA4 Realtime normally. Under GDPR/ePrivacy, analytics cookies technically require prior consent — so this setup is pragmatic, not strictly compliant. If that matters, add a banner and flip `analytics_storage` to `denied` until the user opts in, or switch to a privacy-first alternative: [Plausible](https://plausible.io), [Vercel Analytics](https://vercel.com/analytics), or [Fathom](https://usefathom.com).
 
 ### What's tracked
 
@@ -98,13 +96,5 @@ The trade-off: data is aggregated rather than per-user. You lose session stitchi
 ### Verifying it works
 
 1. Open the site in a fresh Incognito window with DevTools open.
-2. **Application → Cookies**: there should be no `_ga*` cookies (confirms cookieless mode).
-3. **Network → filter `collect`**: a request fires on page load. Click a social icon or the cal.com CTA and a second request fires — expand the payload to see `en=outbound_click` and the `link_label`.
-4. In GA4 → Reports → Realtime, your visit appears within ~30s. The Events tab lists `outbound_click` with a breakdown by `link_label`.
-
-### If you outgrow cookieless mode
-
-Cookieless gives aggregates, not per-user journeys. When that starts to hurt, options in order of least intrusive:
-
-- Switch to a privacy-first alternative that doesn't need consent: [Plausible](https://plausible.io), [Vercel Analytics](https://vercel.com/analytics), or [Fathom](https://usefathom.com).
-- Add a real consent banner and flip consent mode to granted after opt-in.
+2. **Network → filter `collect`**: a request fires on page load. Click a social icon or the cal.com CTA and a second request fires — expand the payload to see `en=outbound_click` and the `link_label`.
+3. In GA4 → Reports → Realtime, your visit appears within ~30s. The Events tab lists `outbound_click` with a breakdown by `link_label`.
