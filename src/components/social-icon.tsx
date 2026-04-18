@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { sendGAEvent } from "@next/third-parties/google";
+import { trackOutboundClick } from "@/lib/analytics";
 
 const icons: Record<string, React.ReactNode> = {
   x: (
@@ -62,13 +62,7 @@ export function SocialIcon({ icon, href, label }: SocialIconProps) {
       target={isMailto ? undefined : "_blank"}
       rel={isMailto ? undefined : "noopener noreferrer"}
       aria-label={label}
-      onClick={() =>
-        sendGAEvent("event", "outbound_click", {
-          link_label: label,
-          link_url: href,
-          link_type: isMailto ? "email" : "social",
-        })
-      }
+      onClick={() => trackOutboundClick(label, href, isMailto ? "email" : "social")}
       className="flex items-center justify-center rounded-full border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
