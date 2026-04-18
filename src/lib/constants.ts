@@ -92,7 +92,7 @@ export const CORE_COMPETENCY: Skill = {
   level: 4,
   description:
     "Turning ideas into reality with users, fast. UpCharge, dozens of Tecci agency projects, my own products and projects, and 20+ hackathons (won some, lost some, placed top in others) - all built by picking the right stack, skipping the wrong complexity, and iterating until something real existed. Shipping matters more than polishing.",
-  tags: ["agentic development", "Claude Code", "v0", "rapid iteration", "scope-cutting"],
+  tags: ["agentic development", "prototyping", "rapid iteration", "MVP delivery", "scope-cutting"],
 };
 
 export const SKILLS: Skill[] = [
@@ -101,7 +101,14 @@ export const SKILLS: Skill[] = [
     level: 4,
     description:
       "Designing systems from scratch - data models, service boundaries, and deployment topology for products that actually need to scale.",
-    tags: ["API design", "data modeling", "service boundaries", "event-driven", "scaling"],
+    tags: [
+      "API design",
+      "data modeling",
+      "service boundaries",
+      "event-driven",
+      "scaling",
+      "performance",
+    ],
   },
   {
     name: "Web Application Development",
