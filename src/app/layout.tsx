@@ -12,11 +12,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://timb.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tim Borovkov — Founder & Software Engineer",
+    default: "Tim Borovkov - Founder & Software Engineer",
     template: "%s | Tim Borovkov",
   },
   description:
-    "Tim Borovkov — founder & software engineer based in Helsinki. Co-founder of Tecci, building Vernix and IRMIN. Writing about tech, startups, AI, Europe and politics.",
+    "Tim Borovkov - software engineer and European federalist 🇪🇺. 10+ years shipping products and companies; running Tecci since 2019, founded UpCharge, now building in AI and data.",
   applicationName: "Tim Borovkov",
   authors: [{ name: "Tim Borovkov", url: SITE_URL }],
   creator: "Tim Borovkov",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     type: "profile",
     url: SITE_URL,
     siteName: "Tim Borovkov",
-    title: "Tim Borovkov — Founder & Software Engineer",
+    title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
+      "Software engineer by craft, European federalist by conviction. Shipping code since I was 12 - products and companies ever since. Running Tecci, founded UpCharge, now building in AI and data.",
     locale: "en_US",
     firstName: "Tim",
     lastName: "Borovkov",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@timborovkov",
     creator: "@timborovkov",
-    title: "Tim Borovkov — Founder & Software Engineer",
+    title: "Tim Borovkov - Founder & Software Engineer",
     description:
-      "Founder & software engineer in Helsinki. Co-founder of Tecci. Building Vernix, IRMIN, CoonNest.",
+      "Software engineer by craft, European federalist by conviction. Shipping code since I was 12 - products and companies ever since. Running Tecci, founded UpCharge, now building in AI and data.",
   },
   icons: {
     icon: [

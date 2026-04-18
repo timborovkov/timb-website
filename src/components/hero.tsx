@@ -41,11 +41,24 @@ export function Hero() {
           {SITE.tagline}
         </motion.p>
 
+        <motion.a
+          href="#projects"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+        >
+          See what I&apos;m building
+          <svg viewBox="0 0 16 16" fill="currentColor" className="size-3.5" aria-hidden>
+            <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" />
+          </svg>
+        </motion.a>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex gap-3 pt-4"
+          className="flex gap-3 pt-2"
         >
           {SOCIAL_LINKS.map((link) => (
             <SocialIcon key={link.label} icon={link.icon} href={link.href} label={link.label} />
