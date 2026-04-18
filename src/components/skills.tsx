@@ -17,9 +17,7 @@ function Dots({ level }: { level: 1 | 2 | 3 | 4 | 5 }) {
       {[1, 2, 3, 4, 5].map((i) => (
         <span
           key={i}
-          className={`block size-1.5 rounded-full ${
-            i <= level ? "bg-accent" : "bg-border"
-          }`}
+          className={`block size-1.5 rounded-full ${i <= level ? "bg-accent" : "bg-border"}`}
         />
       ))}
     </div>
@@ -44,9 +42,7 @@ export function Skills() {
         <h3 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
           {CORE_COMPETENCY.name}
         </h3>
-        <p className="mt-4 text-lg leading-relaxed text-muted">
-          {CORE_COMPETENCY.description}
-        </p>
+        <p className="mt-4 text-lg leading-relaxed text-muted">{CORE_COMPETENCY.description}</p>
         <ul className="mt-5 flex flex-wrap gap-1.5">
           {CORE_COMPETENCY.tags.map((tag) => (
             <li
