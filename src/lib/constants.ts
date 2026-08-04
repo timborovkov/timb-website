@@ -31,15 +31,14 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
-    name: "IRMIN",
-    displayName: "IRMIN",
-    url: "https://irmin.co",
-    status: "coming-soon",
-    category: "Data Infrastructure",
+    name: "The Timeline",
+    url: "https://thetimeline.cc",
+    status: "live",
+    category: "AI SaaS",
     openSource: true,
-    githubUrl: "https://github.com/IrminData",
+    githubUrl: "https://github.com/timborovkov/the-timeline-ai",
     description:
-      "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
+      "An evidence-derived operating record for teams. It captures work from chats, meetings, email, docs, code, and connected tools, then generates cited updates, digests, handoffs, answers, and project memory.",
   },
   {
     name: "Vernix",
@@ -66,6 +65,17 @@ export const PROJECTS: Project[] = [
     category: "Agency",
     description:
       "Helsinki-area software agency building enterprise web apps, commerce platforms, and integrations for clients like Puumerkki, Faba, and Cushman & Wakefield. With the company since 2019; I lead engineering.",
+  },
+  {
+    name: "IRMIN",
+    displayName: "IRMIN",
+    url: "https://irmin.co",
+    status: "coming-soon",
+    category: "Data Infrastructure",
+    openSource: true,
+    githubUrl: "https://github.com/IrminData",
+    description:
+      "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
   },
   {
     name: "RaccoonNest",

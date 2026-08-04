@@ -7,10 +7,11 @@ export function Footer() {
       <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 text-sm text-muted sm:flex-row">
         <div className="flex items-center gap-3">
           <Image
-            src="/fella.png"
-            alt="Tim Borovkov avatar"
+            src="/favicon-32.png"
+            alt=""
             width={32}
             height={32}
+            unoptimized
             className="size-8 rounded-full object-cover"
           />
           <p>
