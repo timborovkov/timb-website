@@ -25,6 +25,7 @@ export interface Project {
   status: ProjectStatus;
   description: string;
   category: string;
+  featured?: boolean;
   openSource?: boolean;
   githubUrl?: string;
 }
@@ -35,6 +36,7 @@ export const PROJECTS: Project[] = [
     url: "https://thetimeline.cc",
     status: "live",
     category: "AI SaaS",
+    featured: true,
     openSource: true,
     githubUrl: "https://github.com/timborovkov/the-timeline-ai",
     description:
@@ -76,6 +78,16 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/IrminData",
     description:
       "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
+  },
+  {
+    name: "Tim's Agent Skills",
+    url: "https://github.com/timborovkov/tims-agent-skills",
+    status: "ongoing",
+    category: "Agent Skills",
+    openSource: true,
+    githubUrl: "https://github.com/timborovkov/tims-agent-skills",
+    description:
+      "Reusable workflows for coding agents - covering delivery, testing, documentation, code review, project setup, and safe upstream synchronization across Codex, Claude Code, Cursor, OpenCode, and Hermes.",
   },
   {
     name: "RaccoonNest",

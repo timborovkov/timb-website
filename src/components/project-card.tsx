@@ -38,8 +38,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ease: [0.25, 0.4, 0.25, 1],
       }}
       whileHover={{ scale: 1.02 }}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 backdrop-blur-sm transition-colors hover:border-accent/40 sm:p-8"
+      className={`group relative overflow-hidden rounded-2xl border bg-surface p-6 backdrop-blur-sm transition-colors hover:border-accent/40 sm:p-8 ${
+        project.featured ? "border-accent/40 sm:col-span-2" : "border-border"
+      }`}
     >
+      {project.featured && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-accent-soft blur-3xl"
+        />
+      )}
+
       {isClickable && (
         <a
           href={project.url}
@@ -50,7 +59,15 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         />
       )}
 
-      <div className="flex items-center justify-between">
+      {project.featured && (
+        <p className="relative text-xs font-semibold uppercase tracking-widest text-accent">
+          Featured project
+        </p>
+      )}
+
+      <div
+        className={`relative flex items-center justify-between ${project.featured ? "mt-3" : ""}`}
+      >
         <h3 className="font-display text-2xl font-bold tracking-wide">{displayName}</h3>
         <span className={`rounded-full px-3 py-1 text-xs font-medium ${status.classes}`}>
           {status.label}
