@@ -16,7 +16,7 @@ export const SOCIAL_LINKS = [
   { label: "Schedule a call", href: "https://cal.com/timbo", icon: "calendar" },
 ] as const;
 
-export type ProjectStatus = "live" | "coming-soon" | "ongoing";
+export type ProjectStatus = "live" | "coming-soon" | "ongoing" | "archived";
 
 export interface Project {
   name: string;
@@ -30,7 +30,7 @@ export interface Project {
   githubUrl?: string;
 }
 
-export const PROJECTS: Project[] = [
+export const CURRENT_PROJECTS: Project[] = [
   {
     name: "The Timeline",
     url: "https://thetimeline.cc",
@@ -41,16 +41,6 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/timborovkov/the-timeline-ai",
     description:
       "An evidence-derived operating record for teams. It captures work from chats, meetings, email, docs, code, and connected tools, then generates cited updates, digests, handoffs, answers, and project memory.",
-  },
-  {
-    name: "Vernix",
-    url: "https://vernix.app",
-    status: "live",
-    category: "AI SaaS",
-    openSource: true,
-    githubUrl: "https://github.com/timborovkov/Vernix",
-    description:
-      "AI meeting assistant that joins your video calls on Zoom, Meet, Teams, and Webex. Automatic transcripts, summaries, and action items, connected to 25+ tools.",
   },
   {
     name: "UpCharge",
@@ -69,6 +59,19 @@ export const PROJECTS: Project[] = [
       "Helsinki-area software agency building enterprise web apps, commerce platforms, and integrations for clients like Puumerkki, Faba, and Cushman & Wakefield. With the company since 2019; I lead engineering.",
   },
   {
+    name: "Tim's Agent Skills",
+    url: "https://github.com/timborovkov/tims-agent-skills",
+    status: "ongoing",
+    category: "Agent Skills",
+    openSource: true,
+    githubUrl: "https://github.com/timborovkov/tims-agent-skills",
+    description:
+      "Reusable workflows for coding agents - covering delivery, testing, documentation, code review, project setup, and safe upstream synchronization across Codex, Claude Code, Cursor, OpenCode, and Hermes.",
+  },
+];
+
+export const ARCHIVED_PROJECTS: Project[] = [
+  {
     name: "IRMIN",
     displayName: "IRMIN",
     url: "https://irmin.co",
@@ -80,14 +83,14 @@ export const PROJECTS: Project[] = [
       "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
   },
   {
-    name: "Tim's Agent Skills",
-    url: "https://github.com/timborovkov/tims-agent-skills",
-    status: "ongoing",
-    category: "Agent Skills",
+    name: "Vernix",
+    url: "https://github.com/timborovkov/Vernix",
+    status: "archived",
+    category: "AI SaaS",
     openSource: true,
-    githubUrl: "https://github.com/timborovkov/tims-agent-skills",
+    githubUrl: "https://github.com/timborovkov/Vernix",
     description:
-      "Reusable workflows for coding agents - covering delivery, testing, documentation, code review, project setup, and safe upstream synchronization across Codex, Claude Code, Cursor, OpenCode, and Hermes.",
+      "AI meeting assistant that joined video calls on Zoom, Meet, Teams, and Webex. Automatic transcripts, summaries, and action items, connected to 25+ tools. No longer live. The code is on GitHub.",
   },
   {
     name: "RaccoonNest",
