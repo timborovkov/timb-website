@@ -268,27 +268,27 @@ export const INTERESTS = [
 ] as const;
 
 export const BIO_LEAD =
-  "I'm Tim Borovkov, a founder and software engineer drawn to the hard problems at the intersection of tech, politics, and Europe's future. Born in Tallinn, raised in Helsinki - I've been shipping code since I was 12 and haven't stopped since. Started in Java, later Swift, today mainly TypeScript and Go.";
+  "I'm Tim Borovkov, a founder and software engineer drawn to the hard problems at the intersection of tech, politics, and Europe's future. Born in Tallinn, raised in Helsinki. I've been shipping code since I was 12.";
 
 export const BIO_SECTIONS: { heading: string; paragraphs: string[] }[] = [
   {
     heading: "Craft",
     paragraphs: [
-      "I'm self-taught, and I've built most of what I know from the ground up. These days I work end-to-end - architecture, DevOps, data pipelines, backend, frontend, and the LLM and agent layer that's reshaping all of it. I also lead engineering teams, drive product development, and run projects from scope to ship.",
+      "I'm self-taught, and I've built most of what I know from the ground up. I work end-to-end, from the architecture to the product people use, and I lead engineering when the work calls for a team.",
     ],
   },
   {
     heading: "Companies",
     paragraphs: [
-      "Tecci is the software consultancy I've been running with my partners since 2019 - we build enterprise web apps, commerce, and integrations for Nordic companies.",
-      "I also co-founded UpCharge, a power bank sharing network across Finland and Spain - once Finland's largest, today its second-biggest. As founding CEO I ran operations, growth, investor relations, and product, and led development of the mobile app, PWA, backend, and admin tools serving thousands of users across hundreds of venues. In early 2025 I stepped back from the active business role to go deeper on the AI wave - building new products like IRMIN, and spending two months in San Francisco to see firsthand what the industry's leaders are working on. I came back more determined to build than ever.",
+      "Tecci is the software consultancy I've been running with my partners since 2019. We build enterprise web apps, commerce, and integrations for Nordic companies.",
+      "I co-founded UpCharge, a power bank sharing network in Finland and Spain, and was its founding CEO. I stepped back from the day-to-day to go deeper on building in AI.",
     ],
   },
   {
     heading: "Life",
     paragraphs: [
-      "The rest of my time goes into side projects - commercial and not, open and closed source, mostly in agentic AI and data engineering. The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week and try never to end a day without shipping something - a feature, a fix, anything. No matter the jetlag, flight schedule, or hangover.",
-      "About nine months out of the year, I work remotely while traveling the world - coding from cafés, beaches, and anywhere else with decent wifi. When I'm not on the road, I split time between Helsinki and Tallinn - Helsinki is home, Tallinn is where I retreat to focus.",
+      "Side projects take the rest, mostly in AI and data. The past few years have been about getting sharper as an engineer, an architect, and a founder.",
+      "I spend much of the year working remotely while traveling. Helsinki is home. Tallinn is where I go to focus.",
     ],
   },
   {
