@@ -27,7 +27,7 @@ I also co-founded UpCharge, Finland's leading power bank sharing network, and se
 
 How I work: end-to-end. Architecture, DevOps, data pipelines, backend, frontend, and the LLM and agent layer reshaping all of it. Self-taught and full-stack in the broadest sense — comfortable from infra to UI to team lead. Main stack today is TypeScript and Go; I started in Java and passed through Swift on the way.
 
-The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week, 80+ hours, and try never to end a day without shipping something.
+The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week and try never to end a day without shipping something.
 
 About nine months a year I work remotely while traveling — coding from cafés, beaches, and anywhere with decent wifi. When I'm not on the road, I split time between Helsinki and Tallinn.
 

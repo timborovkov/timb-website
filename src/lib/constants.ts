@@ -280,14 +280,14 @@ export const BIO_SECTIONS: { heading: string; paragraphs: string[] }[] = [
   {
     heading: "Companies",
     paragraphs: [
-      "Tecci is the software consultancy I've been running with my partners since 2019 - we build enterprise web apps, commerce, and integrations for Nordic companies. It takes roughly 30% of my hours.",
+      "Tecci is the software consultancy I've been running with my partners since 2019 - we build enterprise web apps, commerce, and integrations for Nordic companies.",
       "I also co-founded UpCharge, a power bank sharing network across Finland and Spain - once Finland's largest, today its second-biggest. As founding CEO I ran operations, growth, investor relations, and product, and led development of the mobile app, PWA, backend, and admin tools serving thousands of users across hundreds of venues. In early 2025 I stepped back from the active business role to go deeper on the AI wave - building new products like IRMIN, and spending two months in San Francisco to see firsthand what the industry's leaders are working on. I came back more determined to build than ever.",
     ],
   },
   {
     heading: "Life",
     paragraphs: [
-      "The rest of my time goes into side projects - commercial and not, open and closed source, mostly in agentic AI and data engineering. The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week, 80+ hours, and try never to end a day without shipping something - a feature, a fix, anything. No matter the jetlag, flight schedule, or hangover.",
+      "The rest of my time goes into side projects - commercial and not, open and closed source, mostly in agentic AI and data engineering. The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week and try never to end a day without shipping something - a feature, a fix, anything. No matter the jetlag, flight schedule, or hangover.",
       "About nine months out of the year, I work remotely while traveling the world - coding from cafés, beaches, and anywhere else with decent wifi. When I'm not on the road, I split time between Helsinki and Tallinn - Helsinki is home, Tallinn is where I retreat to focus.",
     ],
   },
