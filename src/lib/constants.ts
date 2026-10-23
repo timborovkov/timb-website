@@ -2,7 +2,7 @@ export const SITE = {
   name: "Tim Borovkov",
   tagline:
     "Software engineer by craft, classical liberal and European federalist 🇪🇺 by conviction. Shipping code since I was 12 - building products and companies that solve real problems ever since.",
-  domains: ["timb.dev", "borovkov.me"],
+  domains: ["timb.dev"],
 } as const;
 
 export const EMAIL = "me@timb.dev";

@@ -35,9 +35,9 @@ Set the same variable in the production deploy env (e.g. Vercel project settings
 
 ## Canonical domain redirects
 
-The site is reachable via multiple domains (e.g. `timb.dev`, `www.timb.dev`, `borovkov.me`, `www.borovkov.me`). `src/proxy.ts` enforces a single canonical host — anything other than the host in `NEXT_PUBLIC_SITE_URL` is 308-redirected to the equivalent path on the canonical host.
+The site is reachable on `timb.dev` and `www.timb.dev`. `src/proxy.ts` enforces a single canonical host — anything other than the host in `NEXT_PUBLIC_SITE_URL` is 308-redirected to the equivalent path on the canonical host.
 
-Example: `https://www.borovkov.me/about-me?x=1` → `https://timb.dev/about-me?x=1`
+Example: `https://www.timb.dev/about-me?x=1` → `https://timb.dev/about-me?x=1`
 
 To change the canonical domain, update `NEXT_PUBLIC_SITE_URL` in the deploy env — no code change needed. To add a new alias domain, just point its DNS at the deployment; the proxy will redirect it automatically.
 
