@@ -2,7 +2,7 @@ export const SITE = {
   name: "Tim Borovkov",
   tagline:
     "Software engineer by craft, classical liberal and European federalist 🇪🇺 by conviction. Shipping code since I was 12 - building products and companies that solve real problems ever since.",
-  domains: ["timb.dev", "borovkov.me"],
+  domains: ["timb.dev"],
 } as const;
 
 export const EMAIL = "me@timb.dev";
@@ -16,7 +16,7 @@ export const SOCIAL_LINKS = [
   { label: "Schedule a call", href: "https://cal.com/timbo", icon: "calendar" },
 ] as const;
 
-export type ProjectStatus = "live" | "coming-soon" | "ongoing";
+export type ProjectStatus = "live" | "coming-soon" | "ongoing" | "archived";
 
 export interface Project {
   name: string;
@@ -30,7 +30,7 @@ export interface Project {
   githubUrl?: string;
 }
 
-export const PROJECTS: Project[] = [
+export const CURRENT_PROJECTS: Project[] = [
   {
     name: "The Timeline",
     url: "https://thetimeline.cc",
@@ -41,16 +41,6 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/timborovkov/the-timeline-ai",
     description:
       "An evidence-derived operating record for teams. It captures work from chats, meetings, email, docs, code, and connected tools, then generates cited updates, digests, handoffs, answers, and project memory.",
-  },
-  {
-    name: "Vernix",
-    url: "https://vernix.app",
-    status: "live",
-    category: "AI SaaS",
-    openSource: true,
-    githubUrl: "https://github.com/timborovkov/Vernix",
-    description:
-      "AI meeting assistant that joins your video calls on Zoom, Meet, Teams, and Webex. Automatic transcripts, summaries, and action items, connected to 25+ tools.",
   },
   {
     name: "UpCharge",
@@ -69,17 +59,6 @@ export const PROJECTS: Project[] = [
       "Helsinki-area software agency building enterprise web apps, commerce platforms, and integrations for clients like Puumerkki, Faba, and Cushman & Wakefield. With the company since 2019; I lead engineering.",
   },
   {
-    name: "IRMIN",
-    displayName: "IRMIN",
-    url: "https://irmin.co",
-    status: "coming-soon",
-    category: "Data Infrastructure",
-    openSource: true,
-    githubUrl: "https://github.com/IrminData",
-    description:
-      "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
-  },
-  {
     name: "Tim's Agent Skills",
     url: "https://github.com/timborovkov/tims-agent-skills",
     status: "ongoing",
@@ -89,11 +68,35 @@ export const PROJECTS: Project[] = [
     description:
       "Reusable workflows for coding agents - covering delivery, testing, documentation, code review, project setup, and safe upstream synchronization across Codex, Claude Code, Cursor, OpenCode, and Hermes.",
   },
+];
+
+export const ARCHIVED_PROJECTS: Project[] = [
+  {
+    name: "IRMIN",
+    displayName: "IRMIN",
+    url: "https://irmin.co",
+    status: "archived",
+    category: "Data Infrastructure",
+    openSource: true,
+    githubUrl: "https://github.com/IrminData",
+    description:
+      "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
+  },
+  {
+    name: "Vernix",
+    url: "https://github.com/timborovkov/Vernix",
+    status: "archived",
+    category: "AI SaaS",
+    openSource: true,
+    githubUrl: "https://github.com/timborovkov/Vernix",
+    description:
+      "AI meeting assistant that joined video calls on Zoom, Meet, Teams, and Webex. Automatic transcripts, summaries, and action items, connected to 25+ tools. No longer live. The code is on GitHub.",
+  },
   {
     name: "RaccoonNest",
     displayName: "Raccoon Nest",
     url: "https://github.com/timborovkov/raccoon-nest",
-    status: "ongoing",
+    status: "archived",
     category: "Homelab",
     openSource: true,
     githubUrl: "https://github.com/timborovkov/raccoon-nest",
@@ -265,27 +268,27 @@ export const INTERESTS = [
 ] as const;
 
 export const BIO_LEAD =
-  "I'm Tim Borovkov, a founder and software engineer drawn to the hard problems at the intersection of tech, politics, and Europe's future. Born in Tallinn, raised in Helsinki - I've been shipping code since I was 12 and haven't stopped since. Started in Java, later Swift, today mainly TypeScript and Go.";
+  "I'm Tim Borovkov, a founder and software engineer drawn to the hard problems at the intersection of tech, politics, and Europe's future. Born in Tallinn, raised in Helsinki. I've been shipping code since I was 12.";
 
 export const BIO_SECTIONS: { heading: string; paragraphs: string[] }[] = [
   {
     heading: "Craft",
     paragraphs: [
-      "I'm self-taught, and I've built most of what I know from the ground up. These days I work end-to-end - architecture, DevOps, data pipelines, backend, frontend, and the LLM and agent layer that's reshaping all of it. I also lead engineering teams, drive product development, and run projects from scope to ship.",
+      "I'm self-taught, and I've built most of what I know from the ground up. I work end-to-end, from the architecture to the product people use, and I lead engineering when the work calls for a team.",
     ],
   },
   {
     heading: "Companies",
     paragraphs: [
-      "Tecci is the software consultancy I've been running with my partners since 2019 - we build enterprise web apps, commerce, and integrations for Nordic companies. It takes roughly 30% of my hours.",
-      "I also co-founded UpCharge, a power bank sharing network across Finland and Spain - once Finland's largest, today its second-biggest. As founding CEO I ran operations, growth, investor relations, and product, and led development of the mobile app, PWA, backend, and admin tools serving thousands of users across hundreds of venues. In early 2025 I stepped back from the active business role to go deeper on the AI wave - building new products like IRMIN, and spending two months in San Francisco to see firsthand what the industry's leaders are working on. I came back more determined to build than ever.",
+      "Tecci is the software consultancy I've been running with my partners since 2019. We build enterprise web apps, commerce, and integrations for Nordic companies.",
+      "I co-founded UpCharge, a power bank sharing network in Finland and Spain, and was its founding CEO. I stepped back from the day-to-day to go deeper on building in AI.",
     ],
   },
   {
     heading: "Life",
     paragraphs: [
-      "The rest of my time goes into side projects - commercial and not, open and closed source, mostly in agentic AI and data engineering. The past couple of years have been defined by deep learning and growth: AI, LLMs, data, and leveling up as an engineer, architect, and founder. I work seven days a week, 80+ hours, and try never to end a day without shipping something - a feature, a fix, anything. No matter the jetlag, flight schedule, or hangover.",
-      "About nine months out of the year, I work remotely while traveling the world - coding from cafés, beaches, and anywhere else with decent wifi. When I'm not on the road, I split time between Helsinki and Tallinn - Helsinki is home, Tallinn is where I retreat to focus.",
+      "Side projects take the rest, mostly in AI and data. The past few years have been about getting sharper as an engineer, an architect, and a founder.",
+      "I spend much of the year working remotely while traveling. Helsinki is home. Tallinn is where I go to focus.",
     ],
   },
   {

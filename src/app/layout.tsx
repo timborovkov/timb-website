@@ -102,7 +102,6 @@ const personJsonLd = {
     "https://www.linkedin.com/in/timborovkov",
     "https://github.com/timborovkov",
     "https://www.instagram.com/theborovkov",
-    "https://borovkov.me",
   ],
   birthPlace: "Tallinn, Estonia",
   homeLocation: { "@type": "Place", name: "Helsinki, Finland" },

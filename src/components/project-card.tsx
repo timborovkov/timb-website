@@ -12,6 +12,7 @@ const STATUS_META: Record<ProjectStatus, { label: string; classes: string }> = {
   live: { label: "Live", classes: "bg-emerald-500/15 text-emerald-400" },
   "coming-soon": { label: "Coming Soon", classes: "bg-amber-500/15 text-amber-400" },
   ongoing: { label: "Ongoing", classes: "bg-sky-500/15 text-sky-400" },
+  archived: { label: "Archived", classes: "bg-white/10 text-muted" },
 };
 
 function GithubGlyph({ className }: { className?: string }) {
@@ -23,9 +24,11 @@ function GithubGlyph({ className }: { className?: string }) {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
-  const isClickable = project.status === "live" || project.status === "ongoing";
+  const onGithub = project.url.includes("github.com");
+  const isClickable = project.status !== "coming-soon";
   const status = STATUS_META[project.status];
   const displayName = project.displayName ?? project.name;
+  const actionLabel = onGithub ? "GitHub" : "Visit";
 
   return (
     <motion.div
@@ -54,7 +57,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Visit ${displayName}`}
+          aria-label={onGithub ? `${displayName} on GitHub` : `Visit ${displayName}`}
           className="absolute inset-0 z-10"
         />
       )}
@@ -102,7 +105,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {isClickable && (
         <div className="mt-5 flex items-center gap-2 text-sm text-accent opacity-0 transition-opacity group-hover:opacity-100">
-          <span>Visit</span>
+          <span>{actionLabel}</span>
           <svg viewBox="0 0 16 16" fill="currentColor" className="size-4" aria-hidden>
             <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" />
           </svg>
