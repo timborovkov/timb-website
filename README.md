@@ -11,9 +11,11 @@ Personal website for Tim Borovkov — entrepreneur & software engineer.
 
 ## Development
 
+Install [Bun](https://bun.sh) 1.4.4 and Node.js (version in `.nvmrc`). Bun manages dependencies and runs scripts; Next.js uses Node.js.
+
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -46,15 +48,15 @@ To change the canonical domain, update `NEXT_PUBLIC_SITE_URL` in the deploy env 
 ## Build
 
 ```bash
-pnpm build
+bun run build
 ```
 
 ## Linting & Formatting
 
 ```bash
-pnpm lint
-pnpm format
-pnpm format:check
+bun run lint
+bun run format
+bun run format:check
 ```
 
 ## Analytics
