@@ -118,33 +118,66 @@ export default function LineguardPage() {
         Skip to content
       </a>
 
-      <header className="mx-auto flex max-w-2xl items-center px-6 pt-8 sm:pt-10">
+      <header className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-6 pt-8 sm:pt-10">
         <a href="#content" className="flex items-center gap-2.5 rounded-sm">
           <LogoMark className="h-9 w-auto" />
           <span className="text-lg font-semibold tracking-tight text-[#0B1F33]">lineguard</span>
         </a>
+        <a
+          href="#contact"
+          className="text-sm font-medium text-[#5B6B7C] transition-colors hover:text-[#0B1F33] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
+        >
+          Contact
+        </a>
       </header>
 
       <main id="content" className="mx-auto max-w-2xl px-6 pb-20">
-        <section className="pt-16 sm:pt-24" aria-labelledby="lineguard-heading">
-          <div className="flex items-center gap-3">
-            <LogoMark className="h-12 w-auto sm:h-14" />
-            <h1
-              id="lineguard-heading"
-              className="text-4xl font-semibold tracking-tight text-[#0B1F33] sm:text-5xl"
-            >
-              lineguard
-            </h1>
-          </div>
-
-          <p className="mt-8 max-w-xl text-2xl font-medium leading-snug tracking-tight text-[#0B1F33] sm:text-3xl">
-            Every carrier invoice, checked line by line.
+        <section
+          className="mt-8 rounded-2xl border border-[#0B1F33]/10 bg-white/70 p-5 sm:mt-10 sm:p-6"
+          aria-labelledby="exploring-heading"
+        >
+          <h2
+            id="exploring-heading"
+            className="text-base font-semibold tracking-tight text-[#0B1F33] sm:text-lg"
+          >
+            We&apos;re exploring, not selling
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-[#5B6B7C] sm:text-lg">
+            I&apos;m talking to brokerage finance and AP teams to understand how you audit carrier
+            invoices today. If this sounds familiar, I&apos;d love 20 minutes — and I&apos;m looking
+            for a few design partners to build it with. Free retro-audit of your past loads, under
+            NDA.
           </p>
+        </section>
+
+        <section className="pt-10 sm:pt-14" aria-labelledby="lineguard-heading">
+          <h1
+            id="lineguard-heading"
+            className="max-w-xl text-3xl font-semibold leading-snug tracking-tight text-[#0B1F33] sm:text-4xl"
+          >
+            Every carrier invoice, checked line by line.
+          </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#5B6B7C]">
             An AI agent that matches carrier invoices to rate confirmations and PODs, flags
             unapproved accessorials, duplicates and missed rebills, and drafts the disputes — before
             you pay.
           </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a
+              href={MAILTO}
+              aria-label="Book a 20-min call with Tim Borovkov"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#0B1F33] px-5 py-3 text-sm font-medium text-[#F7F7F4] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
+            >
+              Book a 20-min call
+            </a>
+            <a
+              href={`tel:${PHONE_TEL}`}
+              aria-label={`Call Tim Borovkov at ${PHONE_DISPLAY}`}
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#0B1F33]/20 px-5 py-3 text-sm font-medium text-[#0B1F33] transition-colors hover:border-[#0B1F33]/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
+            >
+              {PHONE_DISPLAY}
+            </a>
+          </div>
         </section>
 
         <section className="mt-20 sm:mt-28" aria-labelledby="problem-heading">
@@ -206,25 +239,7 @@ export default function LineguardPage() {
           </p>
         </section>
 
-        <section
-          className="mt-20 rounded-2xl border border-[#0B1F33]/10 bg-white/70 p-6 sm:mt-28 sm:p-8"
-          aria-labelledby="exploring-heading"
-        >
-          <h2
-            id="exploring-heading"
-            className="text-xl font-semibold tracking-tight text-[#0B1F33]"
-          >
-            We&apos;re exploring, not selling
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#5B6B7C]">
-            I&apos;m talking to brokerage finance and AP teams to understand how you audit carrier
-            invoices today. If this sounds familiar, I&apos;d love 20 minutes — and I&apos;m looking
-            for a few design partners to build it with. Free retro-audit of your past loads, under
-            NDA.
-          </p>
-        </section>
-
-        <section className="mt-20 sm:mt-28" aria-labelledby="contact-heading">
+        <section className="mt-20 sm:mt-28" id="contact" aria-labelledby="contact-heading">
           <h2
             id="contact-heading"
             className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
