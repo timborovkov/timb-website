@@ -1,0 +1,21 @@
+.lineguard-root {
+  --lg-ink: #0b1f33;
+  --lg-signal: #12b76a;
+  --lg-amber: #f5a524;
+  --lg-paper: #f7f7f4;
+  --lg-slate: #5b6b7c;
+  min-height: 100dvh;
+  background: var(--lg-paper);
+  color: var(--lg-ink);
+}
+
+html:has(.lineguard-root),
+html:has(.lineguard-root) body {
+  background: var(--lg-paper);
+  color: var(--lg-ink);
+}
+
+.lineguard-root ::selection {
+  background: color-mix(in srgb, var(--lg-signal) 30%, transparent);
+  color: var(--lg-ink);
+}
