@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EMAIL } from "@/lib/constants";
-
-const TITLE = "workdelta — AI automation for SMEs, paid on results";
-const DESCRIPTION =
-  "Repetitive back-office work still eats the week in most 10–50 person companies. I'm exploring how to automate it, paid on results — and I'd like to learn how it looks in your business.";
+import { DESCRIPTION, OG_IMAGE_URL, PAGE_URL, TITLE } from "./content";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -12,7 +9,7 @@ export const metadata: Metadata = {
   keywords: [
     "workdelta",
     "AI automation",
-    "SME automation",
+    "SMEs",
     "back-office automation",
     "paid on results",
     "Tim Borovkov",
@@ -20,22 +17,41 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     type: "website",
-    url: "/workdelta",
+    url: PAGE_URL,
     siteName: "workdelta",
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: TITLE,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@timborovkov",
+    creator: "@timborovkov",
     title: TITLE,
     description: DESCRIPTION,
+    images: [{ url: OG_IMAGE_URL, alt: TITLE }],
   },
   alternates: {
-    canonical: "/workdelta",
+    canonical: PAGE_URL,
   },
 };
 
@@ -134,28 +150,34 @@ export default function WorkdeltaPage() {
           </p>
         </section>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <nav
+          aria-label="Contact"
+          className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+        >
           <a
             href="https://cal.com/timbo"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Book a 20-min call with Tim Borovkov (opens in a new tab)"
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#C6F432] px-5 py-2.5 text-sm font-medium text-[#0F2A2E] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
           >
             Book a 20-min call
           </a>
           <a
             href="tel:+447448094797"
+            aria-label="Call Tim Borovkov at +44 7448094797"
             className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#1F7A75] px-5 py-2.5 text-sm text-[#F6F5F0] transition-colors hover:border-[#C6F432] hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
           >
             +44 7448094797
           </a>
           <a
             href={`mailto:${EMAIL}`}
+            aria-label={`Email Tim Borovkov at ${EMAIL}`}
             className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#1F7A75] px-5 py-2.5 text-sm text-[#F6F5F0] transition-colors hover:border-[#C6F432] hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
           >
             {EMAIL}
           </a>
-        </div>
+        </nav>
 
         <section
           className="mt-12 border-t border-[#1F7A75]/40 pt-8"
@@ -178,6 +200,7 @@ export default function WorkdeltaPage() {
       <footer className="mt-10 pt-2">
         <Link
           href="https://timb.dev"
+          aria-label="Tim Borovkov's website, timb.dev"
           className="text-sm text-[#75ABA6] transition-colors hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
         >
           timb.dev

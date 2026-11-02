@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { TITLE } from "./content";
 
-export const alt = "workdelta — AI automation for SMEs, paid on results";
+export const alt = TITLE;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
