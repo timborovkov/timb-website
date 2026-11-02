@@ -1,7 +1,12 @@
 export const SITE_URL = "https://timb.dev";
 export const PAGE_PATH = "/workdelta";
 export const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-export const OG_IMAGE_URL = `${PAGE_URL}/opengraph-image`;
+export const OG_IMAGE_URL = `${PAGE_URL}/opengraph-image.png`;
+export const TWITTER_IMAGE_URL = `${PAGE_URL}/twitter-image.png`;
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+export const OG_IMAGE_ALT =
+  "workdelta: Repetitive back-office work still eats the week. Exploring AI automation for SMEs, paid on results.";
 
 export const TITLE = "workdelta — AI automation for SMEs and back-office work";
 export const DESCRIPTION =

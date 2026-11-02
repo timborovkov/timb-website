@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EMAIL } from "@/lib/constants";
-import { DESCRIPTION, OG_IMAGE_URL, PAGE_URL, TITLE } from "./content";
+import {
+  DESCRIPTION,
+  OG_IMAGE_ALT,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_URL,
+  OG_IMAGE_WIDTH,
+  PAGE_URL,
+  TITLE,
+  TWITTER_IMAGE_URL,
+} from "./content";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -35,9 +44,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: OG_IMAGE_URL,
-        width: 1200,
-        height: 630,
-        alt: TITLE,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: OG_IMAGE_ALT,
         type: "image/png",
       },
     ],
@@ -48,7 +57,14 @@ export const metadata: Metadata = {
     creator: "@timborovkov",
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: OG_IMAGE_URL, alt: TITLE }],
+    images: [
+      {
+        url: TWITTER_IMAGE_URL,
+        width: OG_IMAGE_WIDTH,
+        height: OG_IMAGE_HEIGHT,
+        alt: OG_IMAGE_ALT,
+      },
+    ],
   },
   alternates: {
     canonical: PAGE_URL,
