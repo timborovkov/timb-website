@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
-      images: [`${SITE_URL}/workdelta/opengraph-image.png`],
+      images: [`${SITE_URL}/workdelta/opengraph-image`],
     },
     {
       url: `${SITE_URL}/lineguard`,
