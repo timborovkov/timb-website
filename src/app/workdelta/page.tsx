@@ -155,23 +155,6 @@ export default function WorkdeltaPage() {
           </ol>
         </section>
 
-        <section className="mt-10" aria-labelledby="pricing-heading">
-          <h2
-            id="pricing-heading"
-            className="text-xs font-medium tracking-[0.14em] text-[#75ABA6] uppercase"
-          >
-            Pricing
-          </h2>
-          <p className="mt-3 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
-            Commercial work starts with a €1,500 diagnostic. Ongoing fees are whichever is higher:
-            €500/month or 15% of verified value. Running costs are additional.
-          </p>
-          <p className="mt-3 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
-            Value includes time saved and recovered revenue counted at your agreed gross margin,
-            against an agreed baseline.
-          </p>
-        </section>
-
         <section className="mt-10" aria-labelledby="research-heading">
           <h2
             id="research-heading"
