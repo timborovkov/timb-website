@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { EMAIL } from "@/lib/constants";
 import {
+  CAL_URL,
   DESCRIPTION,
   OG_IMAGE_ALT,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_URL,
   OG_IMAGE_WIDTH,
   PAGE_URL,
+  RESEARCH_EMAIL,
   TITLE,
   TWITTER_IMAGE_URL,
 } from "./content";
@@ -15,14 +16,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    "workdelta",
-    "AI automation",
-    "SMEs",
-    "back-office automation",
-    "paid on results",
-    "Tim Borovkov",
-  ],
+  keywords: ["workdelta", "AI automation", "SMEs", "back-office automation", "Tim Borovkov"],
   robots: {
     index: true,
     follow: true,
@@ -71,18 +65,23 @@ export const metadata: Metadata = {
   },
 };
 
-const AUTOMATABLE = [
-  "invoices and accounts payable",
-  "order entry and quoting",
-  "dispatch and scheduling",
-  "inventory and reordering",
-  "customer enquiries and reporting",
+const EXAMPLES = [
+  "Enter orders and prepare draft quotes.",
+  "Match invoices and chase missing paperwork.",
+  "Update schedules and flag stock shortages.",
+  "Handle routine enquiries and compile reports.",
 ];
 
-const HOW_IT_WORKS = [
-  "A diagnostic to find where time and revenue leak.",
-  "I build and run the automations.",
-  "You pay a share of the value it verifiably delivers, with a monthly minimum.",
+const PROCESS = [
+  "Understand the workflow and how you handle it today.",
+  "Agree what is worth automating and how to measure it.",
+  "Build, run and review the agreed automation.",
+];
+
+const PORTFOLIO = [
+  { name: "The Timeline", href: "https://thetimeline.cc" },
+  { name: "Vernix", href: "https://github.com/timborovkov/Vernix" },
+  { name: "IRMIN", href: "https://irmin.co" },
 ];
 
 function DeltaMark({ className }: { className?: string }) {
@@ -105,23 +104,24 @@ export default function WorkdeltaPage() {
 
       <main className="mt-12 sm:mt-16">
         <h1 className="text-[1.85rem] leading-[1.15] font-medium tracking-tight text-balance sm:text-4xl">
-          AI automation for SMEs, paid on results.
+          Less repetitive admin. More time for your business.
         </h1>
 
         <p className="mt-5 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
-          Repetitive back-office work still eats the week in most 10–50 person companies. I&apos;m
-          exploring how to automate it, and I&apos;d like to learn how it looks in your business.
+          Workdelta is an AI automation service for SMEs with 10–50 staff. I&apos;m researching
+          which repetitive tasks cost teams time or lose them revenue, before deciding what to
+          automate.
         </p>
 
-        <section className="mt-10" aria-labelledby="automatable-heading">
+        <section className="mt-10" aria-labelledby="examples-heading">
           <h2
-            id="automatable-heading"
+            id="examples-heading"
             className="text-xs font-medium tracking-[0.14em] text-[#75ABA6] uppercase"
           >
-            Work that can be automated
+            Where automation might help
           </h2>
           <ul role="list" className="mt-3 list-none space-y-1.5 text-[1.05rem] leading-relaxed">
-            {AUTOMATABLE.map((item) => (
+            {EXAMPLES.map((item) => (
               <li key={item} className="flex gap-2.5">
                 <span
                   className="mt-[0.55em] size-1.5 shrink-0 rounded-full bg-[#C6F432]"
@@ -131,17 +131,20 @@ export default function WorkdeltaPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
+            These are examples. The starting point depends on your business.
+          </p>
         </section>
 
-        <section className="mt-10" aria-labelledby="how-heading">
+        <section className="mt-10" aria-labelledby="process-heading">
           <h2
-            id="how-heading"
+            id="process-heading"
             className="text-xs font-medium tracking-[0.14em] text-[#75ABA6] uppercase"
           >
-            How it would work
+            Process
           </h2>
           <ol role="list" className="mt-3 list-none space-y-2.5 text-[1.05rem] leading-relaxed">
-            {HOW_IT_WORKS.map((item, i) => (
+            {PROCESS.map((item, i) => (
               <li key={item} className="flex gap-3">
                 <span className="w-4 shrink-0 tabular-nums text-[#C6F432]" aria-hidden>
                   {i + 1}
@@ -152,17 +155,17 @@ export default function WorkdeltaPage() {
           </ol>
         </section>
 
-        <section className="mt-10" aria-labelledby="ask-heading">
+        <section className="mt-10" aria-labelledby="research-heading">
           <h2
-            id="ask-heading"
+            id="research-heading"
             className="text-xs font-medium tracking-[0.14em] text-[#75ABA6] uppercase"
           >
-            What I&apos;m asking for
+            Research
           </h2>
           <p className="mt-3 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
-            A 20-minute call. Not selling anything yet: I want to hear what&apos;s repetitive in
-            your week, how you handle it today, and whether a pilot built together would be worth
-            it.
+            I&apos;m looking for a 20-minute research conversation about one repetitive task: what
+            happens today, where it gets stuck and what you&apos;ve already tried. I&apos;m not
+            asking you to buy anything on this call.
           </p>
         </section>
 
@@ -171,27 +174,20 @@ export default function WorkdeltaPage() {
           className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
         >
           <a
-            href="https://cal.com/timbo"
+            href={CAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book a 20-min call with Tim Borovkov (opens in a new tab)"
+            aria-label="Talk through one workflow with Tim Borovkov (opens in a new tab)"
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#C6F432] px-5 py-2.5 text-sm font-medium text-[#0F2A2E] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
           >
-            Book a 20-min call
+            Talk through one workflow
           </a>
           <a
-            href="tel:+447448094797"
-            aria-label="Call Tim Borovkov at +44 7448094797"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#1F7A75] px-5 py-2.5 text-sm text-[#F6F5F0] transition-colors hover:border-[#C6F432] hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
+            href={`mailto:${RESEARCH_EMAIL}`}
+            aria-label={`Prefer email? ${RESEARCH_EMAIL}`}
+            className="inline-flex min-h-11 items-center justify-center text-sm text-[#75ABA6] transition-colors hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
           >
-            +44 7448094797
-          </a>
-          <a
-            href={`mailto:${EMAIL}`}
-            aria-label={`Email Tim Borovkov at ${EMAIL}`}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#1F7A75] px-5 py-2.5 text-sm text-[#F6F5F0] transition-colors hover:border-[#C6F432] hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
-          >
-            {EMAIL}
+            Prefer email? {RESEARCH_EMAIL}
           </a>
         </nav>
 
@@ -206,10 +202,23 @@ export default function WorkdeltaPage() {
             About
           </h2>
           <p className="mt-3 text-[1.05rem] leading-relaxed text-[#F6F5F0]/80 text-pretty">
-            Tim Borovkov. Engineering lead at a software consultancy in the Nordics since 2019
-            (enterprise web apps, commerce, integrations). Builder of The Timeline, Vernix and
-            IRMIN.
+            I&apos;m Tim Borovkov. I&apos;ve been an engineering lead since 2019, building
+            enterprise web apps, commerce systems and integrations. Workdelta is my exploration of
+            how that experience can help SMEs.
           </p>
+          <nav aria-label="Portfolio" className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
+            {PORTFOLIO.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[#75ABA6] transition-colors hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
         </section>
       </main>
 
