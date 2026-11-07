@@ -8,11 +8,11 @@ export const TWITTER_IMAGE_URL = `${PAGE_URL}/twitter-image`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 export const OG_IMAGE_ALT =
-  "Lineguard: Every carrier invoice, checked line by line. Carrier invoice audit for freight brokers.";
+  "Lineguard: Every carrier invoice, checked line by line. An early project by Tim Borovkov.";
 
-export const TITLE = "Lineguard — Carrier invoice audit for freight brokers";
+export const TITLE = "Lineguard: how brokers check carrier invoices";
 export const DESCRIPTION =
-  "Every carrier invoice, checked line by line. An AI agent that matches invoices to rate cons and PODs, flags unapproved accessorials, duplicates and missed rebills, and drafts the disputes — before you pay.";
+  "I'm a software engineer and business student looking into how freight brokers check carrier invoices against the rate con and POD before paying. There's nothing to buy. I'm looking for a few people in broker AP and finance to talk to.";
 
 export const PHONE_DISPLAY = "+44 7448094797";
 export const PHONE_TEL = "+447448094797";
@@ -35,31 +35,16 @@ export const jsonLd = {
         width: OG_IMAGE_WIDTH,
         height: OG_IMAGE_HEIGHT,
       },
-      about: { "@id": `${PAGE_URL}#app` },
+      author: { "@id": `${SITE_URL}#person` },
     },
     {
-      "@type": "SoftwareApplication",
-      "@id": `${PAGE_URL}#app`,
-      name: "Lineguard",
-      url: PAGE_URL,
+      "@type": "Person",
+      "@id": `${SITE_URL}#person`,
+      name: "Tim Borovkov",
+      url: SITE_URL,
       email: EMAIL,
       telephone: PHONE_TEL,
-      description: DESCRIPTION,
-      image: OG_IMAGE_URL,
-      applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      audience: {
-        "@type": "Audience",
-        audienceType: "Freight brokerage finance and AP teams",
-      },
-      creator: {
-        "@type": "Person",
-        name: "Tim Borovkov",
-        url: SITE_URL,
-        email: EMAIL,
-        telephone: PHONE_TEL,
-      },
-      sameAs: [SITE_URL],
+      jobTitle: "Software engineer",
     },
   ],
 } as const;
