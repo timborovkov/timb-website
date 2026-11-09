@@ -85,17 +85,30 @@ export async function renderShareImage() {
         </div>
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          fontSize: 40,
-          fontWeight: 500,
-          letterSpacing: "-0.03em",
-          lineHeight: 1.25,
-          maxWidth: 920,
-        }}
-      >
-        Every carrier invoice, checked line by line.
+      <div style={{ display: "flex", flexDirection: "column", maxWidth: 920 }}>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 22,
+            fontWeight: 500,
+            color: "#8FA0B0",
+            letterSpacing: "-0.02em",
+            marginBottom: 16,
+          }}
+        >
+          An early project by Tim Borovkov
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: 40,
+            fontWeight: 500,
+            letterSpacing: "-0.03em",
+            lineHeight: 1.25,
+          }}
+        >
+          Every carrier invoice, checked line by line.
+        </div>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column" }}>

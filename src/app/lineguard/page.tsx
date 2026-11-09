@@ -23,7 +23,6 @@ export const metadata: Metadata = {
     "carrier invoice",
     "rate confirmation",
     "accessorials",
-    "invoice audit",
     "accounts payable",
     "freight AP",
     "Tim Borovkov",
@@ -82,17 +81,11 @@ export const metadata: Metadata = {
 
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent("Lineguard")}`;
 
-const PROBLEMS = [
-  "AP teams compare rate con, invoice and POD by hand — about 75 invoices per person per day.",
-  "Detention, lumper and layover charges slip through.",
-  "Small mismatches get waved through and leak margin, and accessorials paid to carriers often never get rebilled to shippers.",
-];
-
-const STEPS = [
-  "Reads the carrier-invoice inbox.",
-  "Matches each invoice to the load and rate con.",
-  "Checks every line.",
-  "Approves clean invoices, drafts disputes and rebills for your team to send.",
+const READING = [
+  "Matching the rate con, invoice and POD by hand, load by load",
+  "Detention, lumper and layover billed without approval, or for more hours than the POD shows",
+  "Paying the carrier and then their factor for the same load",
+  "An accessorial paid to the carrier that never gets rebilled to the shipper",
 ];
 
 function LogoMark({ className }: { className?: string }) {
@@ -105,6 +98,27 @@ function LogoMark({ className }: { className?: string }) {
       unoptimized
       className={className}
     />
+  );
+}
+
+function ContactActions({ className }: { className?: string }) {
+  return (
+    <div className={className}>
+      <a
+        href={MAILTO}
+        aria-label={`Email Tim Borovkov at ${EMAIL}`}
+        className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#0B1F33] px-5 py-3 text-sm font-medium text-[#F7F7F4] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
+      >
+        Email Tim
+      </a>
+      <a
+        href={`tel:${PHONE_TEL}`}
+        aria-label={`Call Tim Borovkov at ${PHONE_DISPLAY}`}
+        className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#0B1F33]/20 px-5 py-3 text-sm font-medium text-[#0B1F33] transition-colors hover:border-[#0B1F33]/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
+      >
+        Call {PHONE_DISPLAY}
+      </a>
+    </div>
   );
 }
 
@@ -132,151 +146,88 @@ export default function LineguardPage() {
       </header>
 
       <main id="content" className="mx-auto max-w-2xl px-6 pb-20">
-        <section
-          className="mt-8 rounded-2xl border border-[#0B1F33]/10 bg-white/70 p-5 sm:mt-10 sm:p-6"
-          aria-labelledby="exploring-heading"
-        >
-          <h2
-            id="exploring-heading"
-            className="text-base font-semibold tracking-tight text-[#0B1F33] sm:text-lg"
-          >
-            We&apos;re exploring, not selling
-          </h2>
-          <p className="mt-3 text-base leading-relaxed text-[#5B6B7C] sm:text-lg">
-            I&apos;m talking to brokerage finance and AP teams to understand how you audit carrier
-            invoices today. If this sounds familiar, I&apos;d love 20 minutes — and I&apos;m looking
-            for a few design partners to build it with. Free retro-audit of your past loads, under
-            NDA.
-          </p>
-        </section>
-
         <section className="pt-10 sm:pt-14" aria-labelledby="lineguard-heading">
+          <p className="text-sm font-medium text-[#5B6B7C]">An early project by Tim Borovkov</p>
           <h1
             id="lineguard-heading"
-            className="max-w-xl text-3xl font-semibold leading-snug tracking-tight text-[#0B1F33] sm:text-4xl"
+            className="mt-4 max-w-xl text-3xl font-semibold leading-snug tracking-tight text-[#0B1F33] sm:text-4xl"
           >
             Every carrier invoice, checked line by line.
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-[#5B6B7C]">
-            An AI agent that matches carrier invoices to rate confirmations and PODs, flags
-            unapproved accessorials, duplicates and missed rebills, and drafts the disputes — before
-            you pay.
+            I&apos;m a software engineer and business student looking into how freight brokers check
+            carrier invoices against the rate con and POD before paying. There&apos;s nothing to
+            buy. I&apos;m looking for a few people in broker AP and finance to talk to, and to help
+            shape what gets built.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <a
-              href={MAILTO}
-              aria-label="Book a 20-min call with Tim Borovkov"
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#0B1F33] px-5 py-3 text-sm font-medium text-[#F7F7F4] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
-            >
-              Book a 20-min call
-            </a>
-            <a
-              href={`tel:${PHONE_TEL}`}
-              aria-label={`Call Tim Borovkov at ${PHONE_DISPLAY}`}
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#0B1F33]/20 px-5 py-3 text-sm font-medium text-[#0B1F33] transition-colors hover:border-[#0B1F33]/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
-            >
-              {PHONE_DISPLAY}
-            </a>
-          </div>
+          <ContactActions className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center" />
         </section>
 
-        <section className="mt-20 sm:mt-28" aria-labelledby="problem-heading">
+        <section className="mt-20 sm:mt-28" aria-labelledby="reading-heading">
           <h2
-            id="problem-heading"
+            id="reading-heading"
             className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
           >
-            The problem
+            What I keep reading about
           </h2>
           <ul className="mt-8 space-y-5">
-            {PROBLEMS.map((item, i) => (
+            {READING.map((item) => (
               <li key={item} className="flex gap-4 text-lg leading-relaxed text-[#0B1F33]">
-                {i === 1 ? (
-                  <span className="mt-2 size-2.5 shrink-0 rounded-full bg-[#F5A524]" aria-hidden />
-                ) : (
-                  <span
-                    className="mt-2 size-2.5 shrink-0 rounded-full bg-[#0B1F33]/25"
-                    aria-hidden
-                  />
-                )}
+                <span className="mt-2 size-2.5 shrink-0 rounded-full bg-[#0B1F33]/25" aria-hidden />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
-        </section>
-
-        <section className="mt-20 sm:mt-28" aria-labelledby="how-heading">
-          <h2
-            id="how-heading"
-            className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
-          >
-            How it works
-          </h2>
-          <ol className="mt-8 space-y-6">
-            {STEPS.map((step, i) => (
-              <li key={step} className="flex gap-4">
-                <span
-                  className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#12B76A]/15 text-sm font-semibold text-[#12B76A]"
-                  aria-hidden
-                >
-                  {i + 1}
-                </span>
-                <p className="pt-1 text-lg leading-relaxed text-[#0B1F33]">{step}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="mt-20 sm:mt-28" aria-labelledby="who-heading">
-          <h2
-            id="who-heading"
-            className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
-          >
-            Who it&apos;s for
-          </h2>
           <p className="mt-8 text-lg leading-relaxed text-[#0B1F33]">
-            Mid-size freight brokerages ($10–150M gross) — controllers, CFOs, carrier settlement/AP
-            teams.
+            I&apos;d like to hear whether any of this matches your experience. &ldquo;That&apos;s
+            not really a problem for us&rdquo; is just as useful to hear.
           </p>
         </section>
 
-        <section className="mt-20 sm:mt-28" id="contact" aria-labelledby="contact-heading">
+        <section className="mt-20 sm:mt-28" aria-labelledby="idea-heading">
           <h2
-            id="contact-heading"
+            id="idea-heading"
             className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
           >
-            Talk to Tim
+            The idea
           </h2>
           <p className="mt-8 text-lg leading-relaxed text-[#0B1F33]">
-            Email{" "}
+            A tool that compares a carrier invoice with its rate con and POD, line by line, and
+            points out what doesn&apos;t match. It isn&apos;t built yet. I&apos;d rather build it
+            with a few brokerages than guess.
+          </p>
+        </section>
+
+        <section className="mt-20 sm:mt-28" id="contact" aria-labelledby="help-heading">
+          <h2
+            id="help-heading"
+            className="text-sm font-semibold uppercase tracking-[0.16em] text-[#5B6B7C]"
+          >
+            How to help
+          </h2>
+          <p className="mt-8 text-lg leading-relaxed text-[#0B1F33]">
+            Tell me how your team checks carrier invoices today, by{" "}
             <a
               href={MAILTO}
               className="font-medium text-[#0B1F33] underline decoration-[#12B76A] decoration-2 underline-offset-4 transition-colors hover:text-[#12B76A]"
             >
-              {EMAIL}
+              email
             </a>{" "}
-            or call{" "}
+            or on a{" "}
             <a
               href={`tel:${PHONE_TEL}`}
               className="font-medium text-[#0B1F33] underline decoration-[#12B76A] decoration-2 underline-offset-4 transition-colors hover:text-[#12B76A]"
             >
-              {PHONE_DISPLAY}
+              20-minute call
             </a>
-            .
+            . If it&apos;s interesting, I&apos;d come back later with an early version for your
+            feedback.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={MAILTO}
-              className="inline-flex items-center justify-center rounded-full bg-[#0B1F33] px-5 py-3 text-sm font-medium text-[#F7F7F4] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
-            >
-              Email Tim
-            </a>
-            <a
-              href={`tel:${PHONE_TEL}`}
-              className="inline-flex items-center justify-center rounded-full border border-[#0B1F33]/20 px-5 py-3 text-sm font-medium text-[#0B1F33] transition-colors hover:border-[#0B1F33]/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#12B76A]"
-            >
-              Call {PHONE_DISPLAY}
-            </a>
-          </div>
+          <p className="mt-5 text-lg leading-relaxed text-[#0B1F33]">
+            Who I&apos;d like to hear from: owners, controllers and AP or settlement staff at US
+            freight brokerages.
+          </p>
+          <ContactActions className="mt-8 flex flex-wrap gap-3" />
         </section>
       </main>
 
@@ -288,6 +239,20 @@ export default function LineguardPage() {
             className="font-medium text-[#0B1F33] underline decoration-[#0B1F33]/25 underline-offset-4 transition-colors hover:decoration-[#12B76A] hover:text-[#12B76A]"
           >
             Tim Borovkov
+          </a>
+          .{" "}
+          <a
+            href={MAILTO}
+            className="font-medium text-[#0B1F33] underline decoration-[#0B1F33]/25 underline-offset-4 transition-colors hover:decoration-[#12B76A] hover:text-[#12B76A]"
+          >
+            {EMAIL}
+          </a>{" "}
+          ·{" "}
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="font-medium text-[#0B1F33] underline decoration-[#0B1F33]/25 underline-offset-4 transition-colors hover:decoration-[#12B76A] hover:text-[#12B76A]"
+          >
+            {PHONE_DISPLAY}
           </a>
         </p>
       </footer>
