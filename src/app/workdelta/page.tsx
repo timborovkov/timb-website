@@ -78,6 +78,8 @@ const PROCESS = [
   "Build, run and review the agreed automation.",
 ];
 
+const TECCI_URL = "https://www.tecci.fi/";
+
 const PORTFOLIO = [
   { name: "The Timeline", href: "https://thetimeline.cc" },
   { name: "Vernix", href: "https://github.com/timborovkov/Vernix" },
@@ -205,15 +207,16 @@ export default function WorkdeltaPage() {
             I&apos;m Tim Borovkov. I&apos;ve been an engineering lead since 2019, building
             enterprise web apps, commerce systems and integrations. I also co-run{" "}
             <a
-              href="https://www.tecci.fi/"
+              href={TECCI_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#F6F5F0] underline decoration-[#C6F432]/50 underline-offset-4 transition-colors hover:text-[#C6F432] hover:decoration-[#C6F432]"
+              className="text-[#75ABA6] transition-colors hover:text-[#C6F432] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6F432]"
             >
               Tecci
             </a>
-            , a software agency working with large enterprises on their software needs. Workdelta is
-            my exploration of how that experience can help SMEs.
+            {
+              ", a software agency working with large enterprises on their software needs. Workdelta is my exploration of how that experience can help SMEs."
+            }
           </p>
           <nav aria-label="Portfolio" className="mt-4 flex flex-wrap gap-x-4 gap-y-1">
             {PORTFOLIO.map((item) => (
