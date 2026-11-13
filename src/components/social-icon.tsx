@@ -64,9 +64,7 @@ export function SocialIcon({ icon, href, label }: SocialIconProps) {
       rel={isMailto ? undefined : "noopener noreferrer"}
       aria-label={label}
       onClick={() => trackOutboundClick(label, href, linkType)}
-      className="flex items-center justify-center rounded-full border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
+      className="flex size-12 items-center justify-center border border-border text-muted transition-[color,border-color,background-color] hover:border-accent hover:bg-accent-soft hover:text-accent"
     >
       {icons[icon]}
     </motion.a>

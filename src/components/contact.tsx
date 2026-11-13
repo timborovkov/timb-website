@@ -8,16 +8,14 @@ import { SocialIcon } from "./social-icon";
 
 export function Contact() {
   return (
-    <SectionWrapper id="contact" className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
-      <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
-        Let&apos;s connect
-      </h2>
-      <p className="mt-4 max-w-lg text-lg text-muted">
+    <SectionWrapper id="contact" className="section-rule mx-auto max-w-6xl px-6 py-24 sm:py-36">
+      <h2 className="section-title max-w-4xl">Have something worth building?</h2>
+      <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
         Always happy to hear from founders, builders, collaborators, and anyone curious about tech,
         startups, or European politics. Email is fastest.
       </p>
 
-      <div className="mt-8 flex flex-wrap gap-4">
+      <div className="mt-10 flex flex-wrap gap-3">
         {SOCIAL_LINKS.map((link) => (
           <SocialIcon key={link.label} icon={link.icon} href={link.href} label={link.label} />
         ))}
@@ -28,9 +26,7 @@ export function Contact() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackOutboundClick("Schedule a call (CTA)", "https://cal.com/timbo", "cal")}
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-neutral-950 transition-colors hover:bg-accent/80"
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
+        className="mt-10 inline-flex min-h-12 items-center gap-3 bg-accent px-6 py-3 font-semibold text-neutral-950 transition-colors hover:bg-foreground"
       >
         Schedule a call
         <svg viewBox="0 0 16 16" fill="currentColor" className="size-4">

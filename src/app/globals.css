@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
-  --color-muted: #a3a3a3;
-  --color-accent: #2dd4bf;
-  --color-accent-soft: oklch(0.75 0.15 175 / 0.15);
-  --color-surface: oklch(0.15 0.005 260);
-  --color-surface-elevated: oklch(0.18 0.005 260);
-  --color-border: oklch(1 0 0 / 0.08);
+  --color-background: #0b0e0d;
+  --color-foreground: #f2f0e9;
+  --color-muted: #a6aaa4;
+  --color-accent: #66e0c2;
+  --color-accent-soft: oklch(0.82 0.11 170 / 0.12);
+  --color-surface: #111614;
+  --color-surface-elevated: #171d1a;
+  --color-border: oklch(0.92 0.012 160 / 0.13);
   --font-sans: var(--font-inter);
   --font-display: var(--font-display);
 }
@@ -17,6 +17,8 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
@@ -25,4 +27,81 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--color-border) var(--color-background);
+  scrollbar-width: thin;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+a,
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.page-shell {
+  position: relative;
+  overflow: clip;
+}
+
+.page-shell::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 88% 5%, oklch(0.62 0.11 170 / 0.12), transparent 28rem),
+    linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 46rem,
+      oklch(0.3 0.025 170 / 0.09) 70rem,
+      transparent 96rem
+    );
+  content: "";
+}
+
+.section-rule {
+  border-top: 1px solid var(--color-border);
+}
+
+.section-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.75rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
+}
+
+.text-link {
+  text-decoration-color: color-mix(in oklab, var(--color-accent) 55%, transparent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.text-link:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

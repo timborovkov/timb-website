@@ -1,11 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { Project, ProjectStatus } from "@/lib/constants";
 
 interface ProjectCardProps {
   project: Project;
-  index: number;
 }
 
 const STATUS_META: Record<ProjectStatus, { label: string; classes: string }> = {
@@ -23,35 +19,19 @@ function GithubGlyph({ className }: { className?: string }) {
   );
 }
 
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const onGithub = project.url.includes("github.com");
   const isClickable = project.status !== "coming-soon";
   const status = STATUS_META[project.status];
   const displayName = project.displayName ?? project.name;
-  const actionLabel = onGithub ? "GitHub" : "Visit";
+  const actionLabel = onGithub ? "View on GitHub" : "Visit project";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.15,
-        ease: [0.25, 0.4, 0.25, 1],
-      }}
-      whileHover={{ scale: 1.02 }}
-      className={`group relative overflow-hidden rounded-2xl border bg-surface p-6 backdrop-blur-sm transition-colors hover:border-accent/40 sm:p-8 ${
-        project.featured ? "border-accent/40 sm:col-span-2" : "border-border"
+    <article
+      className={`group relative grid gap-5 border-t border-border py-8 transition-colors hover:border-accent sm:grid-cols-[minmax(0,1fr)_minmax(16rem,0.9fr)] sm:gap-12 sm:py-10 ${
+        project.featured ? "sm:py-14" : ""
       }`}
     >
-      {project.featured && (
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-accent-soft blur-3xl"
-        />
-      )}
-
       {isClickable && (
         <a
           href={project.url}
@@ -62,55 +42,52 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         />
       )}
 
-      {project.featured && (
-        <p className="relative text-xs font-semibold uppercase tracking-widest text-accent">
-          Featured project
-        </p>
-      )}
-
-      <div
-        className={`relative flex items-center justify-between ${project.featured ? "mt-3" : ""}`}
-      >
-        <h3 className="font-display text-2xl font-bold tracking-wide">{displayName}</h3>
-        <span className={`rounded-full px-3 py-1 text-xs font-medium ${status.classes}`}>
-          {status.label}
-        </span>
-      </div>
-
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        <span className="rounded-full border border-border bg-surface/60 px-2.5 py-0.5 text-xs text-muted">
-          {project.category}
-        </span>
-        {project.openSource && project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${displayName} source on GitHub`}
-            className="relative z-20 inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-2.5 py-0.5 text-xs text-muted transition-colors hover:border-accent hover:text-accent"
-          >
-            <GithubGlyph className="size-3.5" />
-            Open Source
-          </a>
-        )}
-        {project.openSource && !project.githubUrl && (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-2.5 py-0.5 text-xs text-muted">
-            <GithubGlyph className="size-3.5" />
-            Open Source
+      <div className="relative">
+        <div className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+          <span>{project.category}</span>
+          <span aria-hidden className="text-border">
+            /
           </span>
-        )}
+          <span className={status.classes.replace(/bg-[^ ]+\s?/, "")}>{status.label}</span>
+        </div>
+        <h3
+          className={`font-display font-semibold tracking-[-0.03em] ${project.featured ? "text-4xl sm:text-6xl" : "text-3xl sm:text-4xl"}`}
+        >
+          {displayName}
+        </h3>
       </div>
 
-      <p className="mt-4 leading-relaxed text-muted">{project.description}</p>
-
-      {isClickable && (
-        <div className="mt-5 flex items-center gap-2 text-sm text-accent opacity-0 transition-opacity group-hover:opacity-100">
-          <span>{actionLabel}</span>
-          <svg viewBox="0 0 16 16" fill="currentColor" className="size-4" aria-hidden>
-            <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" />
-          </svg>
+      <div className="relative flex flex-col items-start sm:pt-8">
+        <p className="max-w-xl leading-relaxed text-muted">{project.description}</p>
+        <div className="relative z-20 mt-5 flex flex-wrap items-center gap-4 text-sm">
+          {project.openSource && project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${displayName} source on GitHub`}
+              className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
+            >
+              <GithubGlyph className="size-3.5" />
+              Source
+            </a>
+          )}
+          {project.openSource && !project.githubUrl && (
+            <span className="inline-flex items-center gap-1.5 text-muted">
+              <GithubGlyph className="size-3.5" />
+              Source
+            </span>
+          )}
+          {isClickable && (
+            <div className="flex items-center gap-2 text-accent transition-transform group-hover:translate-x-1">
+              <span>{actionLabel}</span>
+              <svg viewBox="0 0 16 16" fill="currentColor" className="size-4" aria-hidden>
+                <path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06Z" />
+              </svg>
+            </div>
+          )}
         </div>
-      )}
-    </motion.div>
+      </div>
+    </article>
   );
 }

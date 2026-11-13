@@ -8,18 +8,24 @@ export function Projects() {
   const archivedNames = ARCHIVED_PROJECTS.map((project) => project.displayName ?? project.name);
 
   return (
-    <SectionWrapper id="projects" className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
-      <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">Projects</h2>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2">
-        {CURRENT_PROJECTS.map((project, i) => (
-          <ProjectCard key={project.name} project={project} index={i} />
+    <SectionWrapper id="projects" className="section-rule mx-auto max-w-6xl px-6 py-24 sm:py-36">
+      <div className="mb-14 grid gap-5 md:grid-cols-[1fr_2fr] md:gap-16">
+        <h2 className="section-title">Selected work</h2>
+        <p className="max-w-xl self-end text-lg leading-relaxed text-muted">
+          Products, companies, and open-source systems I&apos;ve helped move from an idea to
+          something real.
+        </p>
+      </div>
+      <div>
+        {CURRENT_PROJECTS.map((project) => (
+          <ProjectCard key={project.name} project={project} />
         ))}
       </div>
 
-      <details className="group mt-16">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl border border-border bg-surface px-6 py-5 transition-colors hover:border-accent/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+      <details className="group mt-14 border-t border-border pt-8">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3 transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
           <div>
-            <h3 className="font-display text-xl font-semibold tracking-tight">Archive</h3>
+            <h3 className="font-display text-2xl font-semibold tracking-tight">Earlier work</h3>
             <p className="mt-1 text-sm text-muted">{archivedNames.join(" · ")}</p>
           </div>
           <svg
@@ -31,9 +37,9 @@ export function Projects() {
             <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" />
           </svg>
         </summary>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {ARCHIVED_PROJECTS.map((project, i) => (
-            <ProjectCard key={project.name} project={project} index={i} />
+        <div className="mt-6">
+          {ARCHIVED_PROJECTS.map((project) => (
+            <ProjectCard key={project.name} project={project} />
           ))}
         </div>
       </details>

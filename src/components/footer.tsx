@@ -4,7 +4,7 @@ import { SITE, EMAIL } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="border-t border-border px-6 py-8">
-      <div className="mx-auto flex max-w-3xl flex-col items-center justify-between gap-4 text-sm text-muted sm:flex-row">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-5 text-sm text-muted sm:flex-row sm:items-end">
         <div className="flex items-center gap-3">
           <Image
             src="/favicon-32.png"
@@ -12,14 +12,14 @@ export function Footer() {
             width={32}
             height={32}
             unoptimized
-            className="size-8 rounded-full object-cover"
+            className="size-8 object-cover"
           />
           <p>
             &copy; {new Date().getFullYear()} {SITE.name} 🇪🇺
           </p>
         </div>
-        <div className="flex flex-col items-center gap-2 sm:items-end">
-          <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent">
+        <div className="flex flex-col items-start gap-2 sm:items-end">
+          <a href={`mailto:${EMAIL}`} className="text-link transition-colors hover:text-accent">
             {EMAIL}
           </a>
           <p className="flex gap-2">
