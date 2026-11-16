@@ -9,7 +9,7 @@ export function Hero() {
       <div className="w-full">
         <p className="mb-6 flex items-center gap-3 text-sm font-medium text-accent">
           <span className="size-2 rounded-full bg-accent shadow-[0_0_0_5px_color-mix(in_oklab,var(--color-accent)_12%,transparent)]" />
-          Building from Helsinki · working across Europe
+          Building products, wherever I am
         </p>
         <h1 className="max-w-5xl font-display text-[clamp(4.5rem,12vw,10rem)] font-semibold leading-[0.78] tracking-[-0.04em]">
           Tim
