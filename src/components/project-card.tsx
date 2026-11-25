@@ -7,7 +7,9 @@ interface ProjectCardProps {
 const STATUS_META: Record<ProjectStatus, { label: string; classes: string }> = {
   live: { label: "Live", classes: "bg-emerald-500/15 text-emerald-400" },
   "coming-soon": { label: "Coming Soon", classes: "bg-amber-500/15 text-amber-400" },
+  piloting: { label: "Piloting", classes: "bg-amber-500/15 text-amber-400" },
   ongoing: { label: "Ongoing", classes: "bg-sky-500/15 text-sky-400" },
+  "former-role": { label: "Former role", classes: "bg-white/10 text-muted" },
   archived: { label: "Archived", classes: "bg-white/10 text-muted" },
 };
 

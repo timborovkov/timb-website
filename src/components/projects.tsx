@@ -1,11 +1,11 @@
 "use client";
 
-import { ARCHIVED_PROJECTS, CURRENT_PROJECTS } from "@/lib/constants";
+import { CURRENT_PROJECTS, EARLIER_PROJECTS } from "@/lib/constants";
 import { SectionWrapper } from "./section-wrapper";
 import { ProjectCard } from "./project-card";
 
 export function Projects() {
-  const archivedNames = ARCHIVED_PROJECTS.map((project) => project.displayName ?? project.name);
+  const earlierNames = EARLIER_PROJECTS.map((project) => project.displayName ?? project.name);
 
   return (
     <SectionWrapper id="projects" className="section-rule mx-auto max-w-6xl px-6 py-24 sm:py-36">
@@ -26,7 +26,7 @@ export function Projects() {
         <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-3 transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
           <div>
             <h3 className="font-display text-2xl font-semibold tracking-tight">Earlier work</h3>
-            <p className="mt-1 text-sm text-muted">{archivedNames.join(" · ")}</p>
+            <p className="mt-1 text-sm text-muted">{earlierNames.join(" · ")}</p>
           </div>
           <svg
             viewBox="0 0 16 16"
@@ -38,7 +38,7 @@ export function Projects() {
           </svg>
         </summary>
         <div className="mt-6">
-          {ARCHIVED_PROJECTS.map((project) => (
+          {EARLIER_PROJECTS.map((project) => (
             <ProjectCard key={project.name} project={project} />
           ))}
         </div>

@@ -16,7 +16,8 @@ export const SOCIAL_LINKS = [
   { label: "Schedule a call", href: "https://cal.com/timbo", icon: "calendar" },
 ] as const;
 
-export type ProjectStatus = "live" | "coming-soon" | "ongoing" | "archived";
+export type ProjectStatus =
+  "live" | "coming-soon" | "piloting" | "ongoing" | "former-role" | "archived";
 
 export interface Project {
   name: string;
@@ -34,26 +35,18 @@ export const CURRENT_PROJECTS: Project[] = [
   {
     name: "The Timeline",
     url: "https://thetimeline.cc",
-    status: "live",
-    category: "AI SaaS",
+    status: "piloting",
+    category: "Team Memory",
     featured: true,
     openSource: true,
     githubUrl: "https://github.com/timborovkov/the-timeline-ai",
     description:
-      "An evidence-derived operating record for teams. It captures work from chats, meetings, email, docs, code, and connected tools, then generates cited updates, digests, handoffs, answers, and project memory.",
-  },
-  {
-    name: "UpCharge",
-    url: "https://upcharge.eu",
-    status: "live",
-    category: "Sharing Economy",
-    description:
-      "Power bank sharing network across Finland and Spain (Málaga, Barcelona). Rent portable chargers at public locations via QR scan, return them anywhere.",
+      "A shared work record that brings together chats, meetings, and documents. Teams can find decisions and commitments, track them alongside projects and tasks, and check the original sources.",
   },
   {
     name: "Tecci",
     url: "https://www.tecci.fi/",
-    status: "live",
+    status: "ongoing",
     category: "Agency",
     description:
       "Helsinki-area software agency building enterprise web apps, commerce platforms, and integrations for clients like Puumerkki, Faba, and Cushman & Wakefield. With the company since 2019; I lead engineering.",
@@ -70,7 +63,15 @@ export const CURRENT_PROJECTS: Project[] = [
   },
 ];
 
-export const ARCHIVED_PROJECTS: Project[] = [
+export const EARLIER_PROJECTS: Project[] = [
+  {
+    name: "UpCharge",
+    url: "https://upcharge.eu",
+    status: "former-role",
+    category: "Sharing Economy",
+    description:
+      "A power bank sharing network in Finland and Spain. I co-founded UpCharge and served as its founding CEO.",
+  },
   {
     name: "IRMIN",
     displayName: "IRMIN",
@@ -78,7 +79,7 @@ export const ARCHIVED_PROJECTS: Project[] = [
     status: "archived",
     category: "Data Infrastructure",
     openSource: true,
-    githubUrl: "https://github.com/IrminData",
+    githubUrl: "https://github.com/timborovkov/irmin",
     description:
       "The trusted data layer for your AI agents. Ingest from any source, version every change, and serve relevant, versioned context to your agents in minutes, not months.",
   },
@@ -225,7 +226,8 @@ export const SKILLS: Skill[] = [
 ];
 
 export const MISSION = {
-  lead: "My personal mission is to help fully automate as many jobs as I can, so humans are free to pursue their true passions.",
+  lead: "My personal mission is to help fully automate as many jobs as I can, so humans are",
+  emphasis: "free to pursue their true passions.",
   body: [
     "Most people in the workforce today are unmotivated - there for the paycheck, not the work. The result is not just low productivity, but in my view a net-negative effect on value produced, as unmotivated individuals drag on their more efficient and driven colleagues.",
     "It's absurd that we still have \"generic office jobs\" whose daily work mostly consists of summarizing things, answering emails, sitting in meetings for the sake of meetings, or copy-pasting between systems. Humans aren't needed for this. We have the tech - let's fix it.",
@@ -281,7 +283,7 @@ export const BIO_SECTIONS: { heading: string; paragraphs: string[] }[] = [
     heading: "Companies",
     paragraphs: [
       "Tecci is the software consultancy I've been running with my partners since 2019. We build enterprise web apps, commerce, and integrations for Nordic companies.",
-      "I co-founded UpCharge, a power bank sharing network in Finland and Spain, and was its founding CEO. I stepped back from the day-to-day to go deeper on building in AI.",
+      "I co-founded UpCharge, a power bank sharing network in Finland and Spain, and served as its founding CEO. I've since moved on to building in AI.",
     ],
   },
   {
